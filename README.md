@@ -1,7 +1,7 @@
 # TicTacToeGame
 Tic Tac Toe Game
 
-
+In order to run the game, run the Game.java file.
 ![Test Passed](https://github.com/daviddangtim/TicTacToeGame/assets/132671801/5dd35c2d-562e-4884-8417-a241cd5ce85a)
 
 Plan Tests: First, we outlined the game's behavior by defining various test cases. These tests were like a "wish list" for how the game should work.
