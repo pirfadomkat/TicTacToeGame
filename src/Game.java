@@ -1,6 +1,42 @@
 public class Game {
     private char[][] board;
     private char currentPlayer;
+    public static void main(String[] args) {
+        Game game = new Game();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to X and O (Tic-Tac-Toe) Game!");
+        System.out.println("Let's get started.");
+
+        // Main game loop
+        while (true) {
+            char currentPlayer = game.getCurrentPlayer();
+            System.out.println("Current player: " + currentPlayer);
+            System.out.print("Enter row (0-2) and column (0-2) to make a move (e.g., 1 1): ");
+
+            int row = scanner.nextInt();
+            int col = scanner.nextInt();
+
+            boolean validMove = game.makeMove(row, col);
+
+            if (!validMove) {
+                System.out.println("Invalid move. Try again.");
+                continue;
+            }
+
+            // Check for a win or draw
+            char result = game.checkWin();
+            if (result == 'X' || result == 'O') {
+                System.out.println("Player " + result + " wins!");
+                break;
+            } else if (result == 'D') {
+                System.out.println("It's a draw!");
+                break;
+            }
+        }
+
+        scanner.close();
+    }
 
     public Game() {
         board = new char[3][3];
